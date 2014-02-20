@@ -16,7 +16,7 @@ DataMapper.finalize.auto_upgrade!
 
 get '/' do
 	@orders = Order.all :order => :id.desc
-	@title = 'All Orders'
+	@title = 'Home'
 	erb :home
 end
 
@@ -32,7 +32,7 @@ end
 
 get '/:id' do
 	@order = Order.get params[:id]
-	@title = '#{@order.name} 음료 변경'
+	@title = @order.name + '음료 변경'
 	erb :edit
 end
 
