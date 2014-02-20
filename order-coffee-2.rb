@@ -43,3 +43,15 @@ put '/:id' do
 	n.save
 	redirect '/'
 end
+
+get '/:id/delete' do
+	@order = Order.get params[:id]
+	@title = "음료 취소 확인"
+	erb :delete
+end
+
+delete '/:id' do
+	n = Order.get params[:id]
+	n.destroy
+	redirect '/'
+end
