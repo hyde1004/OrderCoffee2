@@ -1,0 +1,19 @@
+<% if @order %>
+	<form action='/<%= @order.id %>' method="post">
+		<input type='hidden' name="_method" value="put">
+		<p>
+			이름 <%= @order.name %>
+			음료 
+			<select name="beverage">
+				<option value="아이스 아메리카노" <%='selected="selected"' if @order.beverage == "아이스 아메리카노" %>>아이스 아메리카노</option>
+				<option value="아메리카노" <%='selected="selected"' if @order.beverage == "아메리카노" %>>아메리카노</option>
+				<option value="아이스 그린티라테" <%='selected="selected"' if @order.beverage == "아이스 그린티라테" %>>아이스 그린티라테</option>
+				<option value="그린티라테" <%='selected="selected"' if @order.beverage == "그린티라테" %>>그린티라테</option>
+			</select>
+		<input type='submit'>
+		</p>
+	</form>
+	<a href="/<%= @order.id %>/delete">삭제</a>
+<% else %>
+	<p>주문이 없어요!</p>
+<% end %>

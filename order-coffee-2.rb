@@ -29,3 +29,9 @@ post '/' do
 	n.save
 	redirect '/'
 end
+
+get '/:id' do
+	@order = Order.get params[:id]
+	@title = '#{@order.name} 음료 변경'
+	erb :edit
+end
