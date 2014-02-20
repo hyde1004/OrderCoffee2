@@ -19,3 +19,13 @@ get '/' do
 	@title = 'All Orders'
 	erb :home
 end
+
+post '/' do
+	n = Order.new
+	n.name = params[:name]
+	n.beverage = params[:beverage]
+	n.created_at = Time.now
+	n.updated_at = Time.now
+	n.save
+	redirect '/'
+end

@@ -5,3 +5,10 @@
 		<input type="submit">
 	</p>
 </form>
+
+<% @orders.each do |order| %>
+	<p>
+		이름 : <%= order.name %>,
+		음료 : <%= order.beverage %>
+	</p>
+<% end %>
