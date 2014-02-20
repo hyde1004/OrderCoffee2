@@ -35,3 +35,11 @@ get '/:id' do
 	@title = '#{@order.name} 음료 변경'
 	erb :edit
 end
+
+put '/:id' do
+	n = Order.get params[:id]
+	n.beverage = params[:beverage]
+	n.updated_at = Time.now
+	n.save
+	redirect '/'
+end
