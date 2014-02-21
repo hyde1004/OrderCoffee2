@@ -12,10 +12,24 @@
 	</p>
 </form>
 
-<% @orders.each do |order| %>
-	<p>
-		이름 : <%= order.name %>,
-		음료 : <%= order.beverage %>
-		<a href='/<%= order.id %>'>[수정]</a>
-	</p>
-<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>이름</th>
+      <th>음료</th>
+    </tr>
+  </thead>
+  <tbody>
+	<% @orders.each do |order| %>
+	  <tr>
+	  	<td><%= order.id %></td>
+	    <td><%= order.name %></td>
+	    <td><%= order.beverage %></td>
+	    <td><a href='/<%= order.id %>'>[수정]</a></td>
+	  </tr>
+	<% end %>
+  </tbody>
+</table>
+
