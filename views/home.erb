@@ -1,15 +1,18 @@
-<form action="/" method="post">
-	<p>
-		이름 <input type="text" name="name">
-		음료 
-		<select name="beverage">
+<form class="form-inline" role="form" action="/" method="post">
+	<div class="form-group">
+		<label>이름</label>
+		<input type="text" name="name">
+	</div>
+	<div class="form-group">
+		<label>음료선택</label> 
+		<select class="form-control"  name="beverage">
 			<option value="아이스 아메리카노">아이스 아메리카노</option>
 			<option value="아메리카노">아메리카노</option>
 			<option value="아이스 그린티라테">아이스 그린티라테</option>
 			<option value="그린티라테">그린티라테</option>
 		</select>
-		<input type="submit">
-	</p>
+	</div>
+	<input type="submit">
 </form>
 
 <h1>주문 목록</h1>
